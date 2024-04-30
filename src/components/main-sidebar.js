@@ -42,7 +42,7 @@ export const MainSidebar = (props) => {
     >
       <Box sx={{ p: 2 }}>
         <NextLink
-          href="/dashboard"
+          href="#"
           passHref
         >
           <MainSidebarLink
@@ -50,11 +50,11 @@ export const MainSidebar = (props) => {
             underline="none"
             variant="subtitle2"
           >
-            Live Demo
+           Services
           </MainSidebarLink>
         </NextLink>
         <NextLink
-          href="/browse"
+          href="#"
           passHref
         >
           <MainSidebarLink
@@ -62,11 +62,11 @@ export const MainSidebar = (props) => {
             underline="none"
             variant="subtitle2"
           >
-            Components
+            About Us
           </MainSidebarLink>
         </NextLink>
         <NextLink
-          href="/docs/welcome"
+          href="#"
           passHref
         >
           <MainSidebarLink
@@ -74,18 +74,18 @@ export const MainSidebar = (props) => {
             underline="none"
             variant="subtitle2"
           >
-            Documentation
+            Contact Us
           </MainSidebarLink>
         </NextLink>
         <Button
           component="a"
           fullWidth
-          href="https://material-ui.com/store/items/devias-kit-pro"
+          href="#"
           sx={{ mt: 1.5 }}
           target="_blank"
           variant="contained"
         >
-          Buy Now
+          Login
         </Button>
       </Box>
     </Drawer>

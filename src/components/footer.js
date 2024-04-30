@@ -19,17 +19,17 @@ const sections = [
     title: 'Menu',
     links: [
       {
-        title: 'Browse Components',
-        href: '/browse'
+        title: 'Contact us',
+        href: '#'
       },
       {
-        title: 'Documentation',
-        href: '/docs/welcome'
+        title: 'Our Services',
+        href: '#'
       }
     ]
   },
   {
-    title: 'Placeholders',
+    title: 'Terms',
     links: [
       {
         title: 'Terms & Conditions',
@@ -54,6 +54,10 @@ const sections = [
       },
       {
         title: 'LinkedIn',
+        href: '#'
+      },
+      {
+        title: 'Facebook',
         href: '#'
       }
     ]
@@ -99,7 +103,7 @@ export const Footer = (props) => (
             sx={{ mt: 1 }}
             variant="caption"
           >
-            © 2021 Devias.
+            © 2024 Vet App.
           </Typography>
         </Grid>
         {sections.map((section, index) => (

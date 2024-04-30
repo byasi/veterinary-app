@@ -27,7 +27,7 @@ class CustomDocument extends Document {
           <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="/apple-touch-icon.png"
+            href="/static/logo-2.png"
           />
           <link
             rel="icon"
@@ -37,13 +37,13 @@ class CustomDocument extends Document {
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href="/favicon-32x32.png"
+            href="/static/logo-2.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href="/favicon-16x16.png"
+            href="/static/logo-2.png"
           />
           <meta
             name="theme-color"

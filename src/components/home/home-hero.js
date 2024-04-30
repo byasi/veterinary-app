@@ -28,13 +28,13 @@ export const HomeHero = (props) => {
           color="primary"
           variant="overline"
         >
-          Introducing
+          Welcome to
         </Typography>
         <Typography
           align="center"
           variant="h1"
         >
-          Material Kit Pro v5.0
+          Vet App
         </Typography>
         <Typography
           align="center"
@@ -42,8 +42,8 @@ export const HomeHero = (props) => {
           variant="subtitle1"
           sx={{ py: 3 }}
         >
-          A professional kit that comes with ready-to-use MUI© components developed with one
-          common goal in mind, help you build faster &amp; beautiful applications.
+          Make appointments with trusted veterinary doctors for faster &amp; better services
+          
         </Typography>
         <Box
           sx={{
@@ -67,9 +67,9 @@ export const HomeHero = (props) => {
             color="textSecondary"
             variant="caption"
           >
-            Available For:
+            Services Available:
           </Typography>
-          {['JavaScript', 'TypeScript', 'Figma', 'Sketch'].map((item) => (
+          {['Vaccination', 'Checkup', 'Training', 'Pet Food'].map((item) => (
             <Box
               key={item}
               sx={{
@@ -102,7 +102,7 @@ export const HomeHero = (props) => {
           }}
         >
           <NextLink
-            href="/browse"
+            href="# "
             passHref
           >
             <Button
@@ -110,11 +110,11 @@ export const HomeHero = (props) => {
               size="large"
               variant="outlined"
             >
-              Browse Components
+              Register as Pet Owner
             </Button>
           </NextLink>
           <NextLink
-            href="/dashboard"
+            href="#"
             passHref
           >
             <Button
@@ -122,7 +122,7 @@ export const HomeHero = (props) => {
               size="large"
               variant="contained"
             >
-              Live Demo
+             Register as a Vet Doctor
             </Button>
           </NextLink>
         </Box>
@@ -191,7 +191,7 @@ export const HomeHero = (props) => {
               }}
               variant="h4"
             >
-              4.5k+
+              1.5k+
             </Typography>
             <Typography
               sx={{ color: 'textPrimary' }}
@@ -225,7 +225,7 @@ export const HomeHero = (props) => {
               }}
               variant="h4"
             >
-              4.9/5
+              4.2/5
             </Typography>
             <Typography
               sx={{ color: 'textPrimary' }}
@@ -265,7 +265,7 @@ export const HomeHero = (props) => {
               sx={{ color: 'textPrimary' }}
               variant="overline"
             >
-              complete flows
+              user Friendly
             </Typography>
           </Box>
           <Box

@@ -19,19 +19,19 @@ const Home = () => {
     <>
       <Head>
         <title>
-          Material Kit Pro
+          Vet App
         </title>
       </Head>
       <main>
         <HomeHero />
         <Divider />
-        <HomeDevelopers />
-        <Divider />
-        <HomeDesigners />
-        <HomeTestimonials />
-        <HomeFeatures />
-        <Divider />
-        <HomeClients />
+        {/* <HomeDevelopers /> */}
+        {/* <Divider /> */}
+        {/* <HomeDesigners /> */}
+        {/* <HomeTestimonials /> */}
+        {/* <HomeFeatures /> */}
+        {/* <Divider /> */}
+        {/* <HomeClients /> */}
       </main>
     </>
   );
