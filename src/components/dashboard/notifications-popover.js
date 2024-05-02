@@ -25,37 +25,37 @@ const now = new Date();
 const data = [
   {
     id: '5e8883f1b51cc1956a5a1ec0',
-    author: 'Jie Yang Song',
-    avatar: '/static/mock-images/avatars/avatar-jie_yan_song.png',
+    author: 'Moses ',
+    // avatar: '/static/mock-images/avatars/avatar-jie_yan_song.png',
     createdAt: subHours(now, 2).getTime(),
-    job: 'Remote React / React Native Developer',
+    job: 'Vaccinate his dogs',
     read: true,
     type: 'job_add'
   },
   {
     id: 'bfb21a370c017acc416757c7',
-    author: 'Jie Yang Song',
-    avatar: '/static/mock-images/avatars/avatar-jie_yan_song.png',
+    author: 'John Kagina',
+    // avatar: '/static/mock-images/avatars/avatar-jie_yan_song.png',
     createdAt: subHours(now, 2).getTime(),
-    job: 'Senior Golang Backend Engineer',
+    job: 'Cat does not eat',
     read: false,
     type: 'job_add'
   },
   {
     id: '20d9df4f23fff19668d7031c',
     createdAt: subDays(now, 1).getTime(),
-    description: 'Logistics management is now available',
+    description: 'Calendar is fixed',
     read: true,
     type: 'new_feature'
   },
   {
     id: '5e8883fca0e8612044248ecf',
-    author: 'Jie Yang Song',
-    avatar: '/static/mock-images/avatars/avatar-jie_yan_song.png',
-    company: 'Augmastic Inc',
+    author: 'Desire',
+    // avatar: '/static/mock-images/avatars/avatar-jie_yan_song.png',
+    job: 'Itching dog',
     createdAt: subHours(now, 2).getTime(),
     read: false,
-    type: 'company_created'
+    type: 'job_add'
   }
 ];
 
@@ -88,15 +88,14 @@ const getNotificationContent = (notification) => {
                   sx={{ mr: 0.5 }}
                   variant="body2"
                 >
-                  added a new job
+                  created an appointment
                 </Typography>
-                <Link
-                  href="/dashboard/jobs"
+                <Typography
                   underline="always"
                   variant="body2"
                 >
                   {notification.job}
-                </Link>
+                </Typography>
               </Box>
             )}
             secondary={(

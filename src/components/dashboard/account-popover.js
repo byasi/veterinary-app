@@ -16,7 +16,6 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { useAuth } from '../../hooks/use-auth';
 import { Cog as CogIcon } from '../../icons/cog';
 import { UserCircle as UserCircleIcon } from '../../icons/user-circle';
-import { SwitchHorizontalOutlined as SwitchHorizontalOutlinedIcon } from '../../icons/switch-horizontal-outlined';
 
 export const AccountPopover = (props) => {
   const { anchorEl, onClose, open, ...other } = props;
@@ -81,29 +80,12 @@ export const AccountPopover = (props) => {
             color="textSecondary"
             variant="body2"
           >
-            Acme Inc
+            Admin
           </Typography>
         </Box>
       </Box>
       <Divider />
       <Box sx={{ my: 1 }}>
-        <NextLink
-          href="/dashboard/social/profile"
-          passHref
-        >
-          <MenuItem component="a">
-            <ListItemIcon>
-              <UserCircleIcon fontSize="small" />
-            </ListItemIcon>
-            <ListItemText
-              primary={(
-                <Typography variant="body1">
-                  Profile
-                </Typography>
-              )}
-            />
-          </MenuItem>
-        </NextLink>
         <NextLink
           href="/dashboard/account"
           passHref
@@ -116,23 +98,6 @@ export const AccountPopover = (props) => {
               primary={(
                 <Typography variant="body1">
                   Settings
-                </Typography>
-              )}
-            />
-          </MenuItem>
-        </NextLink>
-        <NextLink
-          href="/dashboard"
-          passHref
-        >
-          <MenuItem component="a">
-            <ListItemIcon>
-              <SwitchHorizontalOutlinedIcon fontSize="small" />
-            </ListItemIcon>
-            <ListItemText
-              primary={(
-                <Typography variant="body1">
-                  Change organization
                 </Typography>
               )}
             />

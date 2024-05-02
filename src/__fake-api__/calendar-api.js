@@ -45,10 +45,10 @@ let events = [
     id: '5e8882fcd525e076b3c1542c',
     allDay: false,
     color: '#14B8A6',
-    description: 'Sorry, John!',
+    description: 'Sorry, Moses!',
     end: setHours(setMinutes(addDays(now, 3), 31), 7).getTime(),
     start: setHours(setMinutes(addDays(now, 3), 30), 7).getTime(),
-    title: 'Fire John'
+    title: 'Fire Moses'
   },
   {
     id: '5e888302e62149e4b49aa609',

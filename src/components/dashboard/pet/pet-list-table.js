@@ -56,7 +56,7 @@ const categoryOptions = [
   }
 ];
 
-export const ProductListTable = (props) => {
+export const PetListTable = (props) => {
   const {
     onPageChange,
     onRowsPerPageChange,
@@ -466,7 +466,7 @@ export const ProductListTable = (props) => {
   );
 };
 
-ProductListTable.propTypes = {
+PetListTable.propTypes = {
   products: PropTypes.array.isRequired,
   productsCount: PropTypes.number.isRequired,
   onPageChange: PropTypes.func,

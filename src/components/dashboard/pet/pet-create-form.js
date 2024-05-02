@@ -46,7 +46,7 @@ const categoryOptions = [
   }
 ];
 
-export const ProductCreateForm = (props) => {
+export const PetCreateForm = (props) => {
   const router = useRouter();
   const [files, setFiles] = useState([]);
   const formik = useFormik({
