@@ -9,9 +9,12 @@ import { ShoppingBag as ShoppingBagIcon } from '../../icons/shopping-bag';
 import { ShoppingCart as ShoppingCartIcon } from '../../icons/shopping-cart';
 import { Collection as CollectionIcon } from '../../icons/collection';
 import { Users as UsersIcon } from '../../icons/users';
+import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
+import BookOnlineIcon from '@mui/icons-material/BookOnline';
 import { Logo } from '../logo';
 import { Scrollbar } from '../scrollbar';
 import { DashboardSidebarSection } from './dashboard-sidebar-section';
+import PetsIcon from '@mui/icons-material/Pets';
 
 const getSections = (t) => [
   {
@@ -35,12 +38,12 @@ const getSections = (t) => [
       {
         title: t('Doctors'),
         path: '/dashboard/doctors',
-        icon: <UsersIcon fontSize="small" />,
+        icon: <LocalHospitalIcon fontSize="small" />,
       },
       {
         title: t('Pets'),
         path: '/dashboard/pets',
-        icon: <ShoppingBagIcon fontSize="small" />,
+        icon: <PetsIcon fontSize="small" />,
       },
       {
         title: t('Medical Reports'),
@@ -49,34 +52,9 @@ const getSections = (t) => [
       },
       {
         title: t('Appointments'),
-        icon: <ShoppingCartIcon fontSize="small" />,
-        path: '/dashboard/orders',
-        children: [
-          {
-            title: t('List'),
-            path: '/dashboard/orders'
-          },
-          {
-            title: t('Details'),
-            path: '/dashboard/orders/1'
-          }
-        ]
+        icon: <BookOnlineIcon fontSize="small" />,
+        path: '/dashboard/appointments',
       },
-      // {
-      //   title: t('Invoices'),
-      //   path: '/dashboard/invoices',
-      //   icon: <ReceiptTaxIcon fontSize="small" />,
-      //   children: [
-      //     {
-      //       title: t('List'),
-      //       path: '/dashboard/invoices'
-      //     },
-      //     {
-      //       title: t('Details'),
-      //       path: '/dashboard/invoices/1'
-      //     }
-      //   ]
-      // }
     ]
   },
 ];
@@ -197,10 +175,10 @@ export const DashboardSidebar = (props) => {
               color="neutral.500"
               variant="body2"
             >
-              {t('Check our docs')}
+              {t('Create a support ticket')}
             </Typography>
             <NextLink
-              href="/docs/welcome"
+              href="#"
               passHref
             >
               <Button
@@ -210,13 +188,12 @@ export const DashboardSidebar = (props) => {
                 sx={{ mt: 2 }}
                 variant="contained"
               >
-                {t('Documentation')}
+                {t('Support Ticket')}
               </Button>
             </NextLink>
           </Box>
         </Box>
       </Scrollbar>
-      
     </>
   );
 

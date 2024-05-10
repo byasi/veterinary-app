@@ -107,12 +107,6 @@ export const CustomerListTable = (props) => {
               <TableCell>
                 Location
               </TableCell>
-              <TableCell>
-                Orders
-              </TableCell>
-              <TableCell>
-                Spent
-              </TableCell>
               <TableCell align="right">
                 Actions
               </TableCell>
@@ -174,17 +168,6 @@ export const CustomerListTable = (props) => {
                   </TableCell>
                   <TableCell>
                     {`${customer.city}, ${customer.state}, ${customer.country}`}
-                  </TableCell>
-                  <TableCell>
-                    {customer.totalOrders}
-                  </TableCell>
-                  <TableCell>
-                    <Typography
-                      color="success.main"
-                      variant="subtitle2"
-                    >
-                      {numeral(customer.totalAmountSpent).format(`${customer.currency}0,0.00`)}
-                    </Typography>
                   </TableCell>
                   <TableCell align="right">
                     <NextLink
