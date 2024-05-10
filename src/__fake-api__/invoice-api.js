@@ -14,7 +14,7 @@ class InvoiceApi {
         },
         dueDate: addDays(now, 5).getTime(),
         issueDate: subHours(now, 1).getTime(),
-        number: 'INV-0019',
+        number: 'MED-0019',
         status: 'paid',
         totalAmount: 55.50
       },
@@ -27,7 +27,7 @@ class InvoiceApi {
         },
         dueDate: addDays(now, 6).getTime(),
         issueDate: subHours(now, 1).getTime(),
-        number: 'INV-0018',
+        number: 'MED-0018',
         status: 'paid',
         totalAmount: 688.90
       },
@@ -40,7 +40,7 @@ class InvoiceApi {
         },
         dueDate: addDays(now, 9).getTime(),
         issueDate: subHours(now, 1).getTime(),
-        number: 'INV-0017',
+        number: 'MED-0017',
         status: 'paid',
         totalAmount: 695.20
       },
@@ -53,7 +53,7 @@ class InvoiceApi {
         },
         dueDate: addDays(now, 25).getTime(),
         issueDate: subDays(subHours(now, 5), 2).getTime(),
-        number: 'INV-0021',
+        number: 'MED-0021',
         status: 'pending',
         totalAmount: 23.11
       },
@@ -66,7 +66,7 @@ class InvoiceApi {
         },
         dueDate: addDays(now, 17).getTime(),
         issueDate: subDays(subHours(now, 4), 2).getTime(),
-        number: 'INV-0020',
+        number: 'MED-0020',
         status: 'pending',
         totalAmount: 253.76
       },
@@ -79,7 +79,7 @@ class InvoiceApi {
         },
         dueDate: addDays(now, 11).getTime(),
         issueDate: subDays(subHours(now, 4), 6).getTime(),
-        number: 'INV-0015',
+        number: 'MED-0015',
         status: 'canceled',
         totalAmount: 781.50
       },
@@ -92,7 +92,7 @@ class InvoiceApi {
         },
         dueDate: addDays(now, 3).getTime(),
         issueDate: subDays(subHours(now, 2), 15).getTime(),
-        number: 'INV-0014',
+        number: 'MED-0014',
         status: 'paid',
         totalAmount: 96.64
       },
@@ -105,7 +105,7 @@ class InvoiceApi {
         },
         dueDate: addDays(now, 1).getTime(),
         issueDate: subDays(subHours(now, 2), 15).getTime(),
-        number: 'INV-0013',
+        number: 'MED-0013',
         status: 'canceled',
         totalAmount: 496.23
       }
@@ -135,7 +135,7 @@ class InvoiceApi {
           unitAmount: 55.50
         }
       ],
-      number: 'INV-0019',
+      number: 'MED-0019',
       status: 'paid',
       subtotalAmount: 50.00,
       taxAmount: 5.50,

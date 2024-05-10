@@ -24,6 +24,8 @@ import {
 } from '@mui/material';
 import { ChevronDown as ChevronDownIcon } from '../../../icons/chevron-down';
 import { ChevronRight as ChevronRightIcon } from '../../../icons/chevron-right';
+import NextLink from 'next/link';
+import { ArrowRight as ArrowRightIcon } from '../../../icons/arrow-right';
 import { DotsHorizontal as DotsHorizontalIcon } from '../../../icons/dots-horizontal';
 import { Image as ImageIcon } from '../../../icons/image';
 import { Scrollbar } from '../../scrollbar';
@@ -236,9 +238,14 @@ export const PetListTable = (props) => {
                       </SeverityPill>
                     </TableCell>
                     <TableCell align="right">
-                      <IconButton>
-                        <DotsHorizontalIcon fontSize="small" />
+                    <NextLink
+                      href="/dashboard/pets/1"
+                      passHref
+                    >
+                      <IconButton component="a">
+                        <ArrowRightIcon fontSize="small" />
                       </IconButton>
+                    </NextLink>
                     </TableCell>
                   </TableRow>
                   {open && (

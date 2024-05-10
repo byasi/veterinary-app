@@ -7,6 +7,7 @@ import { Box, Button, Divider, Drawer, Typography, useMediaQuery } from '@mui/ma
 import { Home as HomeIcon } from '../../icons/home';
 import { ShoppingBag as ShoppingBagIcon } from '../../icons/shopping-bag';
 import { ShoppingCart as ShoppingCartIcon } from '../../icons/shopping-cart';
+import { Collection as CollectionIcon } from '../../icons/collection';
 import { Users as UsersIcon } from '../../icons/users';
 import { Logo } from '../logo';
 import { Scrollbar } from '../scrollbar';
@@ -40,6 +41,11 @@ const getSections = (t) => [
         title: t('Pets'),
         path: '/dashboard/pets',
         icon: <ShoppingBagIcon fontSize="small" />,
+      },
+      {
+        title: t('Medical Reports'),
+        path: '/dashboard/medical-reports',
+        icon: <CollectionIcon fontSize="small" />,
       },
       {
         title: t('Appointments'),
