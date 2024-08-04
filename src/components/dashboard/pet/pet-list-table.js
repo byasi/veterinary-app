@@ -97,14 +97,8 @@ export const PetListTable = (props) => {
               <TableCell width="25%">
                 Name
               </TableCell>
-              <TableCell width="25%">
-                Stock
-              </TableCell>
               <TableCell>
                 Price
-              </TableCell>
-              <TableCell>
-                sku
               </TableCell>
               <TableCell>
                 Status
@@ -206,31 +200,8 @@ export const PetListTable = (props) => {
                         </Box>
                       </Box>
                     </TableCell>
-                    <TableCell width="25%">
-                      <LinearProgress
-                        value={product.quantity}
-                        variant="determinate"
-                        color={product.quantity >= 10 ? 'success' : 'error'}
-                        sx={{
-                          height: 8,
-                          width: 36
-                        }}
-                      />
-                      <Typography
-                        color="textSecondary"
-                        variant="body2"
-                      >
-                        {product.quantity}
-                        {' '}
-                        in stock
-                        {product.variants > 1 && ` in ${product.variants} variants`}
-                      </Typography>
-                    </TableCell>
                     <TableCell>
                       {numeral(product.price).format(`${product.currency}0,0.00`)}
-                    </TableCell>
-                    <TableCell>
-                      {product.sku}
                     </TableCell>
                     <TableCell>
                       <SeverityPill color={product.status === 'published' ? 'success' : 'info'}>

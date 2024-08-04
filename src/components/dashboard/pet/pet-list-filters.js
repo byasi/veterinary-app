@@ -1,60 +1,44 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
-import PropTypes from 'prop-types';
-import { Box, Chip, Divider, Input, Typography } from '@mui/material';
-import { Search as SearchIcon } from '../../../icons/search';
-import { MultiSelect } from '../../multi-select';
+import { useEffect, useMemo, useRef, useState } from "react";
+import PropTypes from "prop-types";
+import { Box, Chip, Divider, Input, Typography } from "@mui/material";
+import { Search as SearchIcon } from "../../../icons/search";
+import { MultiSelect } from "../../multi-select";
 
 const categoryOptions = [
   {
-    label: 'Healthcare',
-    value: 'healthcare'
+    label: "Dog",
+    value: "dog",
   },
   {
-    label: 'Makeup',
-    value: 'makeup'
+    label: "Cat",
+    value: "cat",
   },
-  {
-    label: 'Dress',
-    value: 'dress'
-  },
-  {
-    label: 'Skincare',
-    value: 'skincare'
-  },
-  {
-    label: 'Jewelry',
-    value: 'jewelry'
-  },
-  {
-    label: 'Blouse',
-    value: 'blouse'
-  }
 ];
 
 const statusOptions = [
   {
-    label: 'Published',
-    value: 'published'
+    label: "Published",
+    value: "published",
   },
   {
-    label: 'Draft',
-    value: 'draft'
-  }
+    label: "Draft",
+    value: "draft",
+  },
 ];
 
 const stockOptions = [
   {
-    label: 'All',
-    value: 'all'
+    label: "All",
+    value: "all",
   },
   {
-    label: 'Available',
-    value: 'available'
+    label: "Available",
+    value: "available",
   },
   {
-    label: 'Out of Stock',
-    value: 'outOfStock'
-  }
+    label: "Out of Stock",
+    value: "outOfStock",
+  },
 ];
 
 /**
@@ -65,7 +49,8 @@ const stockOptions = [
 const useUpdateEffect = (effect, dependencies = []) => {
   const isInitialMount = useRef(true);
 
-  useEffect(() => {
+  useEffect(
+    () => {
       if (isInitialMount.current) {
         isInitialMount.current = false;
       } else {
@@ -73,40 +58,42 @@ const useUpdateEffect = (effect, dependencies = []) => {
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    dependencies);
+    dependencies
+  );
 };
 
 export const ProjectListFilters = (props) => {
   const { onChange, ...other } = props;
-  const [queryValue, setQueryValue] = useState('');
+  const [queryValue, setQueryValue] = useState("");
   const [filterItems, setFilterItems] = useState([]);
 
-  useUpdateEffect(() => {
+  useUpdateEffect(
+    () => {
       const filters = {
         name: undefined,
         category: [],
         status: [],
-        inStock: undefined
+        inStock: undefined,
       };
 
       // Transform the filter items in an object that can be used by the parent component to call the
       // serve with the updated filters
       filterItems.forEach((filterItem) => {
         switch (filterItem.field) {
-          case 'name':
+          case "name":
             // There will (or should) be only one filter item with field "name"
             // so we can setup it directly
             filters.name = filterItem.value;
             break;
-          case 'category':
+          case "category":
             filters.category.push(filterItem.value);
             break;
-          case 'status':
+          case "status":
             filters.status.push(filterItem.value);
             break;
-          case 'inStock':
+          case "inStock":
             // The value can be "available" or "outOfStock" and we transform it to a boolean
-            filters.inStock = filterItem.value === 'available';
+            filters.inStock = filterItem.value === "available";
             break;
           default:
             break;
@@ -116,12 +103,18 @@ export const ProjectListFilters = (props) => {
       onChange?.(filters);
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [filterItems]);
+    [filterItems]
+  );
 
   const handleDelete = (filterItem) => {
-    setFilterItems((prevState) => prevState.filter((_filterItem) => {
-      return !(filterItem.field === _filterItem.field && filterItem.value === _filterItem.value);
-    }));
+    setFilterItems((prevState) =>
+      prevState.filter((_filterItem) => {
+        return !(
+          filterItem.field === _filterItem.field &&
+          filterItem.value === _filterItem.value
+        );
+      })
+    );
   };
 
   const handleQueryChange = (event) => {
@@ -129,34 +122,38 @@ export const ProjectListFilters = (props) => {
   };
 
   const handleQueryKeyup = (event) => {
-    if (event.code === 'Enter' && queryValue) {
+    if (event.code === "Enter" && queryValue) {
       // We only allow one chip for the name field
 
-      const filterItem = filterItems.find((filterItem) => filterItem.field === 'name');
+      const filterItem = filterItems.find(
+        (filterItem) => filterItem.field === "name"
+      );
 
       if (filterItem) {
-        setFilterItems((prevState => prevState.map((filterItem) => {
-          if (filterItem.field === 'name') {
-            return {
-              ...filterItem,
-              value: queryValue
-            };
-          }
+        setFilterItems((prevState) =>
+          prevState.map((filterItem) => {
+            if (filterItem.field === "name") {
+              return {
+                ...filterItem,
+                value: queryValue,
+              };
+            }
 
-          return filterItem;
-        })));
+            return filterItem;
+          })
+        );
       } else {
         setFilterItems((prevState) => [
           ...prevState,
           {
-            label: 'Name',
-            field: 'name',
-            value: queryValue
-          }
+            label: "Name",
+            field: "name",
+            value: queryValue,
+          },
         ]);
       }
 
-      setQueryValue('');
+      setQueryValue("");
     }
   };
 
@@ -166,7 +163,7 @@ export const ProjectListFilters = (props) => {
 
       // First cleanup the previous filter items
       const newFilterItems = prevState.filter((filterItem) => {
-        if (filterItem.field !== 'category') {
+        if (filterItem.field !== "category") {
           return true;
         }
 
@@ -186,13 +183,15 @@ export const ProjectListFilters = (props) => {
 
       values.forEach((value) => {
         if (!valuesFound.includes(value)) {
-          const option = categoryOptions.find((option) => option.value === value);
+          const option = categoryOptions.find(
+            (option) => option.value === value
+          );
 
           newFilterItems.push({
-            label: 'Category',
-            field: 'category',
+            label: "Category",
+            field: "category",
             value,
-            displayValue: option.label
+            displayValue: option.label,
           });
         }
       });
@@ -207,7 +206,7 @@ export const ProjectListFilters = (props) => {
 
       // First cleanup the previous filter items
       const newFilterItems = prevState.filter((filterItem) => {
-        if (filterItem.field !== 'status') {
+        if (filterItem.field !== "status") {
           return true;
         }
 
@@ -230,10 +229,10 @@ export const ProjectListFilters = (props) => {
           const option = statusOptions.find((option) => option.value === value);
 
           newFilterItems.push({
-            label: 'Status',
-            field: 'status',
+            label: "Status",
+            field: "status",
             value,
-            displayValue: option.label
+            displayValue: option.label,
           });
         }
       });
@@ -249,24 +248,26 @@ export const ProjectListFilters = (props) => {
 
     setFilterItems((prevState) => {
       // First cleanup the previous filter items
-      const newFilterItems = prevState.filter((filterItem) => filterItem.field !== 'inStock');
+      const newFilterItems = prevState.filter(
+        (filterItem) => filterItem.field !== "inStock"
+      );
       const latestValue = values[values.length - 1];
 
       switch (latestValue) {
-        case 'available':
+        case "available":
           newFilterItems.push({
-            label: 'Stock',
-            field: 'inStock',
-            value: 'available',
-            displayValue: 'Available'
+            label: "Stock",
+            field: "inStock",
+            value: "available",
+            displayValue: "Available",
           });
           break;
-        case 'outOfStock':
+        case "outOfStock":
           newFilterItems.push({
-            label: 'Stock',
-            field: 'inStock',
-            value: 'outOfStock',
-            displayValue: 'Out of Stock'
+            label: "Stock",
+            field: "inStock",
+            value: "outOfStock",
+            displayValue: "Out of Stock",
           });
           break;
         default:
@@ -279,22 +280,30 @@ export const ProjectListFilters = (props) => {
   };
 
   // We memoize this part to prevent re-render issues
-  const categoryValues = useMemo(() => filterItems
-    .filter((filterItems) => filterItems.field === 'category')
-    .map((filterItems) => filterItems.value), [filterItems]);
+  const categoryValues = useMemo(
+    () =>
+      filterItems
+        .filter((filterItems) => filterItems.field === "category")
+        .map((filterItems) => filterItems.value),
+    [filterItems]
+  );
 
-  const statusValues = useMemo(() => filterItems
-    .filter((filterItems) => filterItems.field === 'status')
-    .map((filterItems) => filterItems.value), [filterItems]);
+  const statusValues = useMemo(
+    () =>
+      filterItems
+        .filter((filterItems) => filterItems.field === "status")
+        .map((filterItems) => filterItems.value),
+    [filterItems]
+  );
 
   const stockValues = useMemo(() => {
     const values = filterItems
-      .filter((filterItems) => filterItems.field === 'inStock')
+      .filter((filterItems) => filterItems.field === "inStock")
       .map((filterItems) => filterItems.value);
 
     // Since we do not display the "all" as chip, we add it to the multi-select as a selected value
     if (values.length === 0) {
-      values.unshift('all');
+      values.unshift("all");
     }
 
     return values;
@@ -304,16 +313,16 @@ export const ProjectListFilters = (props) => {
     <div {...other}>
       <Box
         sx={{
-          alignItems: 'center',
-          display: 'flex',
-          p: 2
+          alignItems: "center",
+          display: "flex",
+          p: 2,
         }}
       >
         <SearchIcon fontSize="small" />
         <Box
           sx={{
             flexGrow: 1,
-            ml: 3
+            ml: 3,
           }}
         >
           <Input
@@ -327,61 +336,52 @@ export const ProjectListFilters = (props) => {
         </Box>
       </Box>
       <Divider />
-      {filterItems.length > 0
-        ? (
-          <Box
-            sx={{
-              alignItems: 'center',
-              display: 'flex',
-              flexWrap: 'wrap',
-              p: 2
-            }}
-          >
-            {filterItems.map((filterItem, i) => (
-              <Chip
-                key={i}
-                label={(
-                  <Box
-                    sx={{
-                      alignItems: 'center',
-                      display: 'flex',
-                      '& span': {
-                        fontWeight: 600
-                      }
-                    }}
-                  >
-                  <span>
-                    {filterItem.label}
-                  </span>
-                    :
-                    {' '}
-                    {filterItem.displayValue || filterItem.value}
-                  </Box>
-                )}
-                onDelete={() => handleDelete(filterItem)}
-                sx={{ m: 1 }}
-                variant="outlined"
-              />
-            ))}
-          </Box>
-        )
-        : (
-          <Box sx={{ p: 3 }}>
-            <Typography
-              color="textSecondary"
-              variant="subtitle2"
-            >
-              No filters applied
-            </Typography>
-          </Box>
-        )}
+      {filterItems.length > 0 ? (
+        <Box
+          sx={{
+            alignItems: "center",
+            display: "flex",
+            flexWrap: "wrap",
+            p: 2,
+          }}
+        >
+          {filterItems.map((filterItem, i) => (
+            <Chip
+              key={i}
+              label={
+                <Box
+                  sx={{
+                    alignItems: "center",
+                    display: "flex",
+                    "& span": {
+                      fontWeight: 600,
+                    },
+                  }}
+                >
+                  <span>{filterItem.label}</span>:{" "}
+                  {filterItem.displayValue || filterItem.value}
+                </Box>
+              }
+              onDelete={() => handleDelete(filterItem)}
+              sx={{ m: 1 }}
+              variant="outlined"
+            />
+          ))}
+        </Box>
+      ) : (
+        <Box sx={{ p: 3 }}>
+          <Typography color="textSecondary" variant="subtitle2">
+            No filters applied
+          </Typography>
+        </Box>
+      )}
       <Divider />
       <Box
         sx={{
-          alignItems: 'center',
-          display: 'flex',
-          flexWrap: 'wrap',
-          p: 1
+          alignItems: "center",
+          display: "flex",
+          flexWrap: "wrap",
+          p: 1,
         }}
       >
         <MultiSelect
@@ -408,5 +408,5 @@ export const ProjectListFilters = (props) => {
 };
 
 ProjectListFilters.propTypes = {
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
 };

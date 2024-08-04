@@ -75,7 +75,7 @@ const PetDetails = () => {
     <>
       <Head>
         <title>
-          Dashboard: User Details | Vet App
+          Dashboard: Pet Details | Vet App
         </title>
       </Head>
       <Box
@@ -89,7 +89,7 @@ const PetDetails = () => {
           <div>
             <Box sx={{ mb: 4 }}>
               <NextLink
-                href="/dashboard/users"
+                href="/dashboard/pets"
                 passHref
               >
                 <Link
@@ -105,7 +105,7 @@ const PetDetails = () => {
                     sx={{ mr: 1 }}
                   />
                   <Typography variant="subtitle2">
-                    Users
+                    Pets
                   </Typography>
                 </Link>
               </NextLink>
