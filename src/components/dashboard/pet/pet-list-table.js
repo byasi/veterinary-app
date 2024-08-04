@@ -188,7 +188,7 @@ export const PetListTable = (props) => {
                       {product.name}
                     </TableCell>
                     <TableCell>
-                      <SeverityPill color={product.status === 'published' ? 'success' : 'info'}>
+                      <SeverityPill color={product.status === 'treated' ? 'success' : 'info'}>
                         {product.status}
                       </SeverityPill>
                     </TableCell>
@@ -298,7 +298,7 @@ export const PetListTable = (props) => {
                                     label="Status"
                                     select
                                   >
-                                    {categoryOptions.map((option) => (
+                                    {[{label: 'Under Treatment', value: 'under_treatment'}, {label: 'Treated', value: 'treated'}].map((option) => (
                                       <MenuItem
                                         key={option.value}
                                         value={option.value}

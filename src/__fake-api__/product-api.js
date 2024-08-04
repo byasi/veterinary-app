@@ -14,7 +14,7 @@ class ProductsApi {
         name: 'Roberts',
         price: 23.99,
         quantity: 85,
-        status: 'published',
+        status: 'treated',
         updatedAt: subHours(now, 6).getTime(),
         variants: 2
       },
@@ -27,7 +27,7 @@ class ProductsApi {
         name: 'puma',
         price: 95.00,
         quantity: 0,
-        status: 'published',
+        status: 'treated',
         updatedAt: subDays(subHours(now, 8), 2).getTime(),
         variants: 1
       },
@@ -40,7 +40,7 @@ class ProductsApi {
         name: 'Gafield',
         price: 155.00,
         quantity: 48,
-        status: 'draft',
+        status: 'under_treatment',
         updatedAt: subDays(subHours(now, 2), 1).getTime(),
         variants: 5
       },
@@ -53,7 +53,7 @@ class ProductsApi {
         name: 'Mr. Picos',
         price: 17.99,
         quantity: 5,
-        status: 'published',
+        status: 'treated',
         updatedAt: subDays(subHours(now, 7), 1).getTime(),
         variants: 1
       },
@@ -66,7 +66,7 @@ class ProductsApi {
         name: 'Soja',
         price: 65.99,
         quantity: 10,
-        status: 'draft',
+        status: 'under_treatment',
         updatedAt: subDays(subHours(now, 1), 1).getTime(),
         variants: 1
       },
@@ -79,7 +79,7 @@ class ProductsApi {
         name: 'Bob',
         price: 76.99,
         quantity: 22,
-        status: 'draft',
+        status: 'under_treatment',
         updatedAt: subDays(subHours(now, 3), 3).getTime(),
         variants: 1
       },
@@ -92,7 +92,7 @@ class ProductsApi {
         name: 'Spark',
         price: 115.20,
         quantity: 15,
-        status: 'published',
+        status: 'treated',
         updatedAt: subDays(subHours(now, 5), 6).getTime(),
         variants: 1
       }
