@@ -33,29 +33,13 @@ import { SeverityPill } from '../../severity-pill';
 
 const categoryOptions = [
   {
-    label: 'Healthcare',
-    value: 'healthcare'
+    label: "Dog",
+    value: "dog",
   },
   {
-    label: 'Makeup',
-    value: 'makeup'
+    label: "Cat",
+    value: "cat",
   },
-  {
-    label: 'Dress',
-    value: 'dress'
-  },
-  {
-    label: 'Skincare',
-    value: 'skincare'
-  },
-  {
-    label: 'Jewelry',
-    value: 'jewelry'
-  },
-  {
-    label: 'Blouse',
-    value: 'blouse'
-  }
 ];
 
 export const PetListTable = (props) => {
@@ -98,7 +82,7 @@ export const PetListTable = (props) => {
                 Name
               </TableCell>
               <TableCell>
-                Price
+                Pet Name
               </TableCell>
               <TableCell>
                 Status
@@ -201,7 +185,7 @@ export const PetListTable = (props) => {
                       </Box>
                     </TableCell>
                     <TableCell>
-                      {numeral(product.price).format(`${product.currency}0,0.00`)}
+                      {product.name}
                     </TableCell>
                     <TableCell>
                       <SeverityPill color={product.status === 'published' ? 'success' : 'info'}>
@@ -263,21 +247,8 @@ export const PetListTable = (props) => {
                                   <TextField
                                     defaultValue={product.name}
                                     fullWidth
-                                    label="Product name"
+                                    label="Pet name"
                                     name="name"
-                                  />
-                                </Grid>
-                                <Grid
-                                  item
-                                  md={6}
-                                  xs={12}
-                                >
-                                  <TextField
-                                    defaultValue={product.sku}
-                                    disabled
-                                    fullWidth
-                                    label="SKU"
-                                    name="sku"
                                   />
                                 </Grid>
                                 <Grid
@@ -301,19 +272,6 @@ export const PetListTable = (props) => {
                                     ))}
                                   </TextField>
                                 </Grid>
-                                <Grid
-                                  item
-                                  md={6}
-                                  xs={12}
-                                >
-                                  <TextField
-                                    defaultValue={product.id}
-                                    disabled
-                                    fullWidth
-                                    label="Barcode"
-                                    name="barcode"
-                                  />
-                                </Grid>
                               </Grid>
                             </Grid>
                             <Grid
@@ -322,66 +280,33 @@ export const PetListTable = (props) => {
                               xs={12}
                             >
                               <Typography variant="h6">
-                                Pricing and stocks
+                                Other Details
                               </Typography>
                               <Divider sx={{ my: 2 }} />
                               <Grid
                                 container
                                 spacing={3}
                               >
-                                <Grid
+                               <Grid
                                   item
                                   md={6}
                                   xs={12}
                                 >
                                   <TextField
-                                    defaultValue={product.price}
+                                    defaultValue={product.status}
                                     fullWidth
-                                    label="Old price"
-                                    name="old-price"
-                                    InputProps={{
-                                      startAdornment: (
-                                        <InputAdornment position="start">
-                                          {product.currency}
-                                        </InputAdornment>
-                                      )
-                                    }}
-                                    type="number"
-                                  />
-                                </Grid>
-                                <Grid
-                                  item
-                                  md={6}
-                                  xs={12}
-                                >
-                                  <TextField
-                                    defaultValue={product.price}
-                                    fullWidth
-                                    label="New price"
-                                    name="new-price"
-                                    InputProps={{
-                                      startAdornment: (
-                                        <InputAdornment position="start">
-                                          $
-                                        </InputAdornment>
-                                      )
-                                    }}
-                                    type="number"
-                                  />
-                                </Grid>
-                                <Grid
-                                  item
-                                  md={6}
-                                  xs={12}
-                                  sx={{
-                                    alignItems: 'center',
-                                    display: 'flex'
-                                  }}
-                                >
-                                  <Switch />
-                                  <Typography variant="subtitle2">
-                                    Keep selling when stock is empty
-                                  </Typography>
+                                    label="Status"
+                                    select
+                                  >
+                                    {categoryOptions.map((option) => (
+                                      <MenuItem
+                                        key={option.value}
+                                        value={option.value}
+                                      >
+                                        {option.label}
+                                      </MenuItem>
+                                    ))}
+                                  </TextField>
                                 </Grid>
                               </Grid>
                             </Grid>
@@ -419,7 +344,7 @@ export const PetListTable = (props) => {
                               ml: 'auto'
                             }}
                           >
-                            Delete product
+                            Delete Pet
                           </Button>
                         </Box>
                       </TableCell>
